@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     {{ __('Data Stock') }}
-                    <a href='create.blade.php' class="btn btn-sm btn-primary float-end">Tambah Data</a>
+                    <a href={{ url('/stock-create') }} class="btn btn-sm btn-primary float-end">Tambah Data</a>
                 </div>
 
                 <div class="card-body">
