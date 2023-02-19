@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Feb 2023 pada 06.42
+-- Waktu pembuatan: 19 Feb 2023 pada 08.50
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 8.1.10
 
@@ -136,14 +136,24 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `stock` (
-  `idbarang` varchar(10) NOT NULL,
+  `idbarang` int(11) NOT NULL,
   `nomorbarang` int(11) NOT NULL,
   `namabarang` varchar(50) NOT NULL,
+  `Merek` varchar(220) NOT NULL,
   `satuan` varchar(10) NOT NULL,
   `harga` int(10) NOT NULL,
   `deskripsi` text NOT NULL,
   `stok` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `stock`
+--
+
+INSERT INTO `stock` (`idbarang`, `nomorbarang`, `namabarang`, `Merek`, `satuan`, `harga`, `deskripsi`, `stok`) VALUES
+(1, 370162, 'Lakban Hitam 36mm', 'kenko', 'buah', 15000, '-', 999),
+(2, 378911, 'Lakban Hitam 48mm', 'kenko', 'buah', 18000, '-', 999),
+(3, 378933, 'Lakban Hitam 24mm', 'kenko', 'buah', 14000, '-', 999);
 
 -- --------------------------------------------------------
 
@@ -257,6 +267,12 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `stock`
+--
+ALTER TABLE `stock`
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
@@ -267,16 +283,9 @@ ALTER TABLE `users`
 --
 
 --
--- Ketidakleluasaan untuk tabel `barangkeluar`
---
-ALTER TABLE `barangkeluar`
-  ADD CONSTRAINT `barangkeluar_ibfk_1` FOREIGN KEY (`idbarang`) REFERENCES `stock` (`idbarang`);
-
---
 -- Ketidakleluasaan untuk tabel `barangmasuk`
 --
 ALTER TABLE `barangmasuk`
-  ADD CONSTRAINT `barangmasuk_ibfk_1` FOREIGN KEY (`idbarang`) REFERENCES `stock` (`idbarang`),
   ADD CONSTRAINT `barangmasuk_ibfk_2` FOREIGN KEY (`idpegawai`) REFERENCES `pegawai` (`idpegawai`);
 COMMIT;
 
