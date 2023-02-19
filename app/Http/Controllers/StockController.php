@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
 {
     public function index(){
-        return view('stock.index');
+        $stock =Stock::all();
+        return view('stock.index', compact('stock'));
     }
 
     public function create() {
-        return " saya makul konroler dari metode created";
+        return view('stock.create');
     }
 
 }
