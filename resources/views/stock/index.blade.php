@@ -7,12 +7,12 @@
             <div class="card">
                 <div class="card-header">
                     {{ __('Data Stock') }}
-                    <a href={{ url('/stock-create') }} class="btn btn-sm btn-primary float-end">Tambah Data</a>
+                    <a href={{ route('stock.create') }} class="btn btn-sm btn-primary float-end">Tambah Data</a>
                 </div>
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-sm-center">
+                        <table class="table table-bordered text-sm-right">
                             <tr>
                                 <th>ID</th>
                                 <th>Nomor Barang</th>
@@ -26,7 +26,7 @@
                             </tr>
                             @foreach ($stock as $st)
                             <tr>
-                                <td>{{ $st->idbarang }}</td>
+                                <td>{{ $st->id }}</td>
                                 <td>{{ $st->nomorbarang }}</td>
                                 <td>{{ $st->namabarang }}</td>
                                 <td>{{ $st->Merek }}</td>
@@ -35,8 +35,8 @@
                                 <td>{{ $st->deskripsi }}</td>
                                 <td>{{ $st->stok }}</td>
                                 <td>
-                                <a href="#" class="btn btn-sm btn-warning">EDIT</a>
-                                <a href="#" class="btn btn-sm btn-danger">HAPUS</a>
+                                <a href={{ route('stock.edit', $st->id) }} class="btn btn-sm btn-warning">EDIT</a>
+                                <a href={{ route('stock.hapus', $st->id) }} class="btn btn-sm btn-danger">HAPUS</a>
 
                                 </td>
                             </tr>
