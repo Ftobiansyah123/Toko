@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     {{ __('Data Stock') }}
-                    <a href={{ route('stock.create') }} class="btn btn-sm btn-primary float-end">Tambah Data</a>
+                    <a href={{ route('stock.create') }} class="btn btn-sm btn-primary float-end"> <i class="fa-solid fa-circle-plus fa-beat"></i>Tambah Data</a>
                 </div>
 
                 <div class="card-body">
@@ -34,9 +34,14 @@
                                 <td>{{ $st->harga }}</td>
                                 <td>{{ $st->deskripsi }}</td>
                                 <td>{{ $st->stok }}</td>
+                                
                                 <td>
-                                <a href={{ route('stock.edit', $st->id) }} class="btn btn-sm btn-warning">EDIT</a>
-                                <a href={{ route('stock.hapus', $st->id) }} class="btn btn-sm btn-danger">HAPUS</a>
+                                <a href={{ route('stock.edit', $st->id) }} class="btn btn-sm btn-warning">
+                                <i class="fa fa-edit"></i>    
+                                EDIT</a>
+                                <a href={{ route('stock.hapus', $st->id) }} class="btn btn-sm btn-danger">
+                                <i class="fa fa-eraser"></i>
+                                HAPUS</a>
 
                                 </td>
                             </tr>
