@@ -34,3 +34,10 @@ Route::post('/simpan-pegawai', [App\Http\Controllers\PegawaiControl::class, 'sto
 Route::get('edit-pegawai/{id}', [App\Http\Controllers\PegawaiControl::class, 'edit'])->name('pegawai.edit');
 Route::post('/update-pegawai/{id}', [App\Http\Controllers\PegawaiControl::class, 'update'])->name('pegawai.update');
 Route::get('hapus-pegawai/{id}', [App\Http\Controllers\PegawaiControl::class, 'destroy'])->name('pegawai.hapus');
+//barang masuk routing
+Route::get('/barang_masuk', [App\Http\Controllers\Barang_masuk_controller::class, 'index'])->name('barang_masuk');
+Route::get('/Barang_masuk-create', [App\Http\Controllers\Barang_masuk_controller::class, 'create'])->name('barang_masuk.create');
+Route::post('/simpan-barang_masuk', [App\Http\Controllers\Barang_masuk_controller::class, 'store'])->name('simpan.barang_masuk');
+Route::get('edit-barang_masuk/{id}', [App\Http\Controllers\Barang_masuk_controller::class, 'edit'])->name('barang_masuk.edit');
+Route::post('/update-barang_masuk/{id}', [App\Http\Controllers\Barang_masuk_controller::class, 'update'])->name('barang_masuk.update');
+Route::get('hapus-barang_masuk/{id}', [App\Http\Controllers\Barang_masuk_controller::class, 'destroy'])->name('barang_masuk.hapus');

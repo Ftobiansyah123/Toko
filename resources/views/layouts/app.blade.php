@@ -15,6 +15,16 @@
 
 
     <!-- Scripts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script>
+    $(document).ready(function () {
+    $('.date').datetimepicker({
+    format: 'MM/DD/YYYY',
+    locale: 'en'
+    });
+    </script>
     <link rel="stylesheet" href="{{ asset('font/css/all.min.css')}}">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
@@ -36,7 +46,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav  me-auto">
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         
                             Stock
                         </a>
@@ -49,37 +59,36 @@
                             
                         </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            
+                        <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pegawai
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('pegawai') }}">Lihat data Pegawai</a></li>
+                            <li><a class="dropdown-item" href="{{ route('pegawai') }}">Atur Data Pegawai</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{ route('pegawai.create') }}">Tambah data</a></li>
                             <li><a class="dropdown-item" href="{{ route('pegawai') }}">Print data pegawai</a></li>
                         </ul>
                             
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Barang Masuk
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Barang Masuk</a></li>
+                            <li><a class="dropdown-item" href="{{ route('barang_masuk') }}">Atur Barang Masuk</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Tambah</a></li>
+                            <li><a class="dropdown-item" href="{{ route('barang_masuk.create') }}">Tambah Data</a></li>
                             <li><a class="dropdown-item" href="#">Print</a></li>
                         </ul>
                             
                         </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Barang Keluar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">New</a></li>
+                            <li><a class="dropdown-item" href="#">Atur Barang Keluar</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">New</a></li>
+                            <li><a class="dropdown-item" href="#">Tambah Data</a></li>
                             <li><a class="dropdown-item" href="#">Print</a></li>
                         </ul>
                             

@@ -47,7 +47,7 @@
                             <div class="form-row">
                                 <div class="col float-end">
                                 <button type="submit" class="btn btn-md btn-primary">Submit</button>
-                                <a href="{{'stock'}}" class="btn btn-md btn-danger">Batal</a>
+                                <a href="{{'pegawai'}}" class="btn btn-md btn-danger">Batal</a>
                                 </div>
                               
                             </div>

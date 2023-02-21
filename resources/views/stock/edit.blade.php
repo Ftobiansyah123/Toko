@@ -40,7 +40,7 @@
                         </div>
                         <div class="mb-3">
                                 <label for="deskripsi" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" name="deskripsi" id="desk" value="{{ is_null($stock) ? '' : $stock->deskripsi }}" cols="10" rows="10" ></textarea>
+                                <textarea class="form-control" name="deskripsi" id="desk" value="{{ is_null($stock) ? '' : $stock->deskripsi }}" cols="10" rows="10" >{{ is_null($stock) ? '' : $stock->deskripsi }}</textarea>
                         </div>
                         <div class="mb-3">
                                 <label for="stok" class="form-label">Stok</label>

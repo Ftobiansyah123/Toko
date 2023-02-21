@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Barang_masuk extends Model
 {
     protected $table        = 'barangmasuk';
-    protected $fillable     = ['tanggalmasuk', 'keterangan'];
-    public $timestamp       = 'false';
+    protected $fillable     = ['idbarang', 'tanggalmasuk', 'iduser', 'keterangan'];
+    public $timestamps       = false;
+    public function stock() {
+    return $this->belongsTo(Stock::class, 'idbarang', 'id');
+    }
+    
+    public function user() {
+        return $this->belongsTo(User::class, 'iduser', 'id');
+    }
 }
