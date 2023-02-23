@@ -1,0 +1,53 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    {{ __('Tambah Supplier') }}
+                    
+                </div>
+
+                <div class="card-body bg-secondary text-white">
+                    <form action="{{ route('simpan.supplier') }}" method="post">
+                        @csrf
+                        <div class="from-group">
+                            
+                    
+                      
+                        <div class="mb-3">
+                                <label for="" class="form-label">Nama Supplier</label>
+                                <input type="text" name="namasupplier" class="form-control" placeholder="masukan nama supplier">
+                        </div>
+                      
+                            <label for="no_telepon" class="form-label">Nomor Telepon</label>
+                            <input type="number" name="no_telepon" class="form-control" placeholder="masukan nomor telepon" >
+                            
+                        </div>
+                        <div class="mb-3">
+                                <label for="" class="form-label">Alamat</label>
+                                <textarea class="form-control" name="Alamat" id="desk" cols="30" rows="10"></textarea>
+                        </div>
+                       
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col float-end">
+                                <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                                <a href="{{'supplier'}}" class="btn btn-md btn-danger">Batal</a>
+                                </div>
+                              
+                            </div>
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+ 

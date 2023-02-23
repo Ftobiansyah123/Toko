@@ -15,7 +15,10 @@
                         <table class="table table-bordered text-sm-right">
                             <tr>
                                 <th>ID</th>
+                                <th>Nama Supplier</th>
                                 <th>Nama Barang</th>
+                                <th>Stok</th>
+                                <th>Satuan</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Nama Pegawai Penerima</th>
                                 <th>Keterangan</th>
@@ -28,7 +31,10 @@
                             @foreach ($barangmasuk as $bm)
                             <tr>
                                 <td>{{ $id++ }}</td>
+                                <td>{{ $bm->supplier->namasupplier }}</td>
                                 <td>{{ $bm->stock->namabarang }}</td>
+                                <td>{{ $bm->stok }}</td>
+                                <td>{{ $bm->stock->satuan }}</td>
                                 <td>{{ $bm->tanggalmasuk }}</td>
                                 <td>{{ $bm->user->name }}</td>
                                 <td>{{ $bm->keterangan }}</td>

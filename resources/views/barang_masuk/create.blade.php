@@ -14,12 +14,20 @@
                     <form action="{{ route('simpan.barang_masuk') }}" method="post">
                         @csrf
                         <div class="from-group">
-                            
+                        <div class="col">
+                            <label for="idsupplier" class="form-label">Nama Supplier</label>
+                            <select name="idsupplier" id="idsupplier" class="form-control" >
+                                <option value="" disabled selected>--Pilih Supplier--</option>
+                                @foreach ( $supplier as $sp)
+                                <option value="{{ $sp->id }}">{{ $sp->namasupplier }}</option>
+                                @endforeach
+                                
+                            </select>
                     
                         <div class="col">
                             <label for="iduser" class="form-label">Nama Barang</label>
                             <select name="idbarang" id="idbarang" class="form-control" >
-                                <option value="" disabled selected>--Pilih User--</option>
+                                <option value="" disabled selected>--Pilih Barang--</option>
                                 @foreach ( $stock as $st)
                                 <option value="{{ $st->id }}">{{ $st->namabarang }}</option>
                                 @endforeach
@@ -28,11 +36,16 @@
                             
                         </div>
                         <div class="mb-3">
+                                <label for="stok" class="form-label">Stok</label>
+
+                                <input type="number" name="stok" class="form-control" placeholder="masukan stok">
+                            
                             <label for="date" class="col-1 col-form-label">Date</label>
                             <input type="date" name="tanggalmasuk" class="form-control" placeholder="masukan tanggal" >
                         </div>
+
                         <div class="col">
-                            <label for="iduser" class="form-label">Nama Barang</label>
+                            <label for="iduser" class="form-label">Nama Pegawai</label>
                             <select name="iduser" id="iduser" class="form-control" >
                                 <option value="" disabled selected>--Pilih User--</option>
                                 @foreach ( $user as $u)
