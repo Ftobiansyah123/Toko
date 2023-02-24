@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function(){
 
-
-//stock routing
+    //stock routing
 Route::get('/stock', [App\Http\Controllers\StockController::class, 'index'])->name('stock');
 Route::get('/stock-create', [App\Http\Controllers\StockController::class, 'create'])->name('stock.create');
 Route::post('/simpan-stock', [App\Http\Controllers\StockController::class, 'store'])->name('simpan.stock');
@@ -69,3 +70,5 @@ Route::post('/update-barang_keluar/{id}', [App\Http\Controllers\Barang_keluar_co
 Route::get('hapus-barang_keluar/{id}', [App\Http\Controllers\Barang_keluar_controller::class,'destroy'])->name('barang_keluar.hapus');
 Route::get('barang_keluar-cetak', [App\Http\Controllers\Barang_keluar_controller::class, 'cetak_pdf'])->name('cetak_barang_keluar.pdf'); 
     
+});
+
