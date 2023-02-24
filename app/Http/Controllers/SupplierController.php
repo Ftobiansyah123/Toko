@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Supplier;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -17,6 +18,16 @@ class SupplierController extends Controller
     }
 
     public function store(Request $request) {
+
+         $request->validate([
+            'namasupplier' => 'required',
+            'no_telepon' => 'required',
+            'Alamat' => 'required',
+          
+           
+
+
+        ]);
         
         Supplier::create($request->all());
         alert()->success('Sukses','Data sudah tersimpan.');
@@ -41,4 +52,15 @@ class SupplierController extends Controller
         alert()->success('Sukses','Data sudah Hapus.');
         return redirect()->route('supplier');
     }
+    public function cetak_pdf()
+    {
+        $supplier = Supplier::all(); // replace with your own data
+
+        $pdf = Pdf::loadView('cetak.supplier', ['supplier' =>$supplier])->setPaper('A4', 'portrait');
+     
+        return $pdf->stream('cetak_supplier.pdf');
+
+    
+        
+}
 }

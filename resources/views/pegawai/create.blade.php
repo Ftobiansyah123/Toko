@@ -18,28 +18,38 @@
                     
                         <div class="col">
                             <label for="iduser" class="form-label">Nama Pegawai</label>
-                            <select name="iduser" id="iduser" class="form-control" >
+                            <select name="iduser" id="iduser" class="form-control @error('iduser') is-invalid @enderror" >
                                 <option value="" disabled selected>--Pilih User--</option>
                                 @foreach ( $user as $u)
                                 <option value="{{ $u->id }}">{{ $u->name }}</option>
                                 @endforeach
                                 
                             </select>
-                            
+                            @error('iduser')
+                    <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
+                    @enderror
                         </div>
                         <div class="mb-3">
                                 <label for="bagian" class="form-label">Bagian</label>
-                                <input type="text" name="bagian" class="form-control" placeholder="masukan bagian">
+                                <input type="text" name="bagian" class="form-control @error('bagian') is-invalid @enderror" placeholder="masukan bagian">
+                                @error('bagian')
+                    <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
+                    @enderror
                         </div>
                         <div class="mb-3">
                             <label for="nomortelepon" class="form-label">Nomor Telepon</label>
-                            <input type="text" name="nomortelepon" class="form-control" placeholder="masukan nomor elepon" >
+                            <input type="text" name="nomortelepon" class="form-control @error('nomortelepon') is-invalid @enderror" placeholder="masukan nomor telepon" >
+                            @error('nomortelepon')
+                    <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
+                    @enderror
                            
                         </div>
                         
                         <div class="mb-3">
                                 <label for="alamat" class="form-label">Alamat</label>
-                                <textarea class="form-control" name="alamat" id="desk" cols="2" rows="3" style="resize: none" ></textarea>
+                                <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="desk" cols="2" rows="3" style="resize: none" ></textarea>@error('alamat')
+                    <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
+                    @enderror
                         </div>
                        
                         </div>
@@ -47,7 +57,7 @@
                             <div class="form-row">
                                 <div class="col float-end">
                                 <button type="submit" class="btn btn-md btn-primary">Submit</button>
-                                <a href="{{'pegawai'}}" class="btn btn-md btn-danger">Batal</a>
+                               <button type="button" class="btn btn-md btn-danger" onclick="window.history.back();">Cancel</button>
                                 </div>
                               
                             </div>

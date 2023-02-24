@@ -51,7 +51,7 @@
                             <div class="form-row">
                                 <div class="col float-end">
                                 <button type="submit" class="btn btn-md btn-primary">Submit</button>
-                                <a href="{{'stock'}}" class="btn btn-md btn-danger">Batal</a>
+                                <button type="button" class="btn btn-md btn-danger" onclick="window.history.back();">Cancel</button>
                                 </div>
                               
                             </div>

@@ -8,6 +8,7 @@
                 <div class="card-header">
                     {{ __('Data Stock') }}
                     <a href={{ route('stock.create') }} class="btn btn-sm btn-primary float-end"> <i class="fa-solid fa-circle-plus fa-beat"></i>Tambah Data</a>
+                    <a href={{ route('cetak_stock.pdf') }} class="btn btn-sm btn-primary float-left" target="_blank">CETAK PDF</a>
                 </div>
 
                 <div class="card-body">
@@ -24,9 +25,12 @@
                                 <th>Stok</th>
                                 <th>Aksi</th>
                             </tr>
+                             @php
+                        $id = 1;
+                    @endphp
                             @foreach ($stock as $st)
                             <tr>
-                                <td>{{ $st->id }}</td>
+                                <td>{{ $id++ }}</td>
                                 <td>{{ $st->nomorbarang }}</td>
                                 <td>{{ $st->namabarang }}</td>
                                 <td>{{ $st->Merek }}</td>

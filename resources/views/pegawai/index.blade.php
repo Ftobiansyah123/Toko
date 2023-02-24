@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     {{ __('Data Pegawai') }}
-                    <a href={{ route('pegawai.create') }} class="btn btn-sm btn-primary float-end">Tambah Data</a>
+                    <a href={{ route('pegawai.create') }} class="btn btn-sm btn-primary float-end"><i class="fa-solid fa-circle-plus fa-beat"></i>Tambah Data</a>
+                    <a href={{ route('cetak_pegawai.pdf') }} class="btn btn-sm btn-primary float-left" target="_blank">CETAK PDF</a>
                 </div>
 
                 <div class="card-body">
@@ -34,8 +35,8 @@
                                 <td>{{ $pg->alamat }}</td>
                                 
                                 <td>
-                                <a href={{ route('pegawai.edit', $pg->id) }} class="btn btn-sm btn-warning">EDIT</a>
-                                <a href={{ route('pegawai.hapus', $pg->id) }} class="btn btn-sm btn-danger">HAPUS</a>
+                                <a href={{ route('pegawai.edit', $pg->id) }} class="btn btn-sm btn-warning"><i class="fa fa-edit"></i>EDIT</a>
+                                <a href={{ route('pegawai.hapus', $pg->id) }} class="btn btn-sm btn-danger"><i class="fa fa-eraser"></i>HAPUS</a>
 
                                 </td>
                             </tr>

@@ -8,6 +8,7 @@
                 <div class="card-header">
                     {{ __('Data Supplier') }}
                     <a href={{ route('supplier.create') }} class="btn btn-sm btn-primary float-end "> <i class="fa-solid fa-circle-plus fa-beat" ></i>   Tambah Data</a>
+                     <a href={{ route('cetak_supplier.pdf') }} class="btn btn-sm btn-primary float-left" target="_blank">CETAK PDF</a>
 
                 <div class="card-body">
                     <div class="table-responsive">
@@ -19,9 +20,12 @@
                                 <th>Alamat</th>
                                 <th>Aksi</th>
                             </tr>
+                             @php
+                        $id = 1;
+                    @endphp
                             @foreach ($supplier as $sp)
                             <tr>
-                                <td>{{ $sp->id }}</td>
+                                <td>{{ $id++ }}</td>
                                 <td>{{ $sp->namasupplier }}</td>
                                 <td>{{ $sp->no_telepon }}</td>
                                 <td>{{ $sp->Alamat }}</td>

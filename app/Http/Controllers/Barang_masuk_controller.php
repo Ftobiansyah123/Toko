@@ -7,6 +7,7 @@ use App\Models\Pegawai;
 use App\Models\Stock;
 use App\Models\Supplier;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Auth\AuthManager;
 
@@ -25,6 +26,18 @@ class Barang_masuk_controller extends Controller
     }
 
     public function store(Request $request) {
+        $request->validate([
+            'idsupplier' => 'required',
+            'idbarang' => 'required',
+            'tanggalmasuk' => 'required',
+            'iduser' => 'required',
+            'stok' => 'required',
+            
+           
+
+
+        ]);
+
         $stockMasuk = $request->input('stok');
         $namaBarang = $request->input('idbarang');
         $ambiStok = Stock::where('id', $namaBarang)->first();
@@ -63,4 +76,15 @@ class Barang_masuk_controller extends Controller
         toast('data berhasil dihapus','success');
         return redirect()->route('barang_masuk');
     }
+    public function cetak_pdf()
+    {
+        $bm = Barang_masuk::all(); // replace with your own data
+
+        $pdf = Pdf::loadView('cetak.barang_masuk', ['barangmasuk' =>$bm])->setPaper('A4', 'portrait');
+     
+        return $pdf->stream('cetak_barang_masuk.pdf');
+
+    
+        
+}
 }

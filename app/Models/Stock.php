@@ -15,4 +15,8 @@ class Stock extends Model
     public function barang_masuk() {
         return $this->hasOne(Barang_masuk::class, 'idbarang', 'id');
     }
+
+    public function barang_keluar() {
+        return $this->hasOne(Barang_keluar::class, 'idbarang', 'id');
+    }
 }

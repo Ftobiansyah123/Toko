@@ -6,29 +6,15 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    {{ __('Tambah Data Barang Masuk') }}
+                    {{ __('Tambah Data Barang Keluar') }}
                     
                 </div>
 
                 <div class="card-body bg-secondary text-white">
-                    <form action="{{ route('simpan.barang_masuk') }}" method="post">
+                    <form action="{{ route('simpan.barang_keluar') }}" method="post">
                         @csrf
                         
                         <div class="from-group">
-                        <div class="col">
-                            <label for="idsupplier" class="form-label"
-                           
-                            >Nama Supplier</label>
-                            <select name="idsupplier" id="idsupplier" class="form-control @error('idsupplier') is-invalid @enderror" >
-                                <option value="" disabled selected>--Pilih Supplier--</option>
-                                @foreach ( $supplier as $sp)
-                                <option value="{{ $sp->id }}">{{ $sp->namasupplier }}</option>
-                                @endforeach
-                                
-                            </select>
-                   @error('idsupplier')
-                    <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
-                    @enderror
                         <div class="col">
                             <label for="iduser" class="form-label">Nama Barang</label>
                             <select name="idbarang" id="idbarang" class="form-control @error('idbarang') is-invalid @enderror" >
@@ -49,34 +35,25 @@
                                 @error('stok')
                     <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
                     @enderror
+                    <div class="mb-3">
                             <label for="date" class="col-1 col-form-label">Date</label>
-                            <input type="date" name="tanggalmasuk" class="form-control" placeholder="masukan tanggal" >
+                            <input type="date" name="tanggalkeluar" class="form-control @error('tanggalkeluar') is-invalid @enderror" placeholder="masukan tanggal" >
 
-                             @error('tanggalmasuk')
+                             @error('tanggalkeluar')
                     <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
                     @enderror
-                        </div>
+                    </div>
+                    <div class="mb-3">
+                            <label for="text" class="col-1 col-form-label">Penerima</label>
+                            <input type="text" name="penerima" class="form-control @error('penerima') is-invalid @enderror" placeholder="masukan tanggal" >
 
-                        <div class="col">
-                            <label for="iduser" class="form-label">Nama Pegawai</label>
-                            <select name="iduser" id="iduser" class="form-control @error('iduser') is-invalid @enderror" >
-                                <option value="" disabled selected>--Pilih User--</option>
-                                @foreach ( $user as $u)
-                                <option value="{{ $u->id }}">{{ $u->name }}</option>
-                                @endforeach
-                                
-                            </select>
-                            @error('iduser')
+                             @error('penerima')
                     <div class="alert alert-warning invalid-feedback" >{{ $message }}</div>
                     @enderror
+                    </div>
                         </div>
+
                         
-                        
-                        <div class="mb-3">
-                                <label for="alamat" class="form-label">Keterangan</label>
-                                <textarea class="form-control" name="keterangan" id="desk" cols="2" rows="3" style="resize: none" ></textarea>
-                                
-                        </div>
                        
                         </div>
     

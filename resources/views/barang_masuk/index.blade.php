@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     {{ __('Data Barang Masuk') }}
-                    <a href={{ route('barang_masuk.create') }} class="btn btn-sm btn-primary float-end">Tambah Data</a>
+                    <a href={{ route('barang_masuk.create') }} class="btn btn-sm btn-primary float-end"><i class="fa-solid fa-circle-plus fa-beat"></i>Tambah Data</a>
+                    <a href={{ route('cetak_barang_masuk.pdf') }} class="btn btn-sm btn-primary float-left" target="_blank">CETAK PDF</a>
                 </div>
 
                 <div class="card-body">
@@ -40,8 +41,8 @@
                                 <td>{{ $bm->keterangan }}</td>
                                 
                                 <td>
-                                <a href={{ route('barang_masuk.edit', $bm->id) }} class="btn btn-sm btn-warning">EDIT</a>
-                                <a href={{ route('barang_masuk.hapus', $bm->id) }} class="btn btn-sm btn-danger">HAPUS</a>
+                                <a href={{ route('barang_masuk.edit', $bm->id) }} class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>EDIT</a>
+                                <a href={{ route('barang_masuk.hapus', $bm->id) }} class="btn btn-sm btn-danger"><i class="fa fa-eraser"></i>HAPUS</a>
 
                                 </td>
                             </tr>
