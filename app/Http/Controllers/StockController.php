@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 Use Alert;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 class StockController extends Controller
 {
@@ -58,10 +59,11 @@ class StockController extends Controller
 
     public function cetak_pdf()
     {
+        $today = Carbon::now()->isoFormat('DD MMMM Y');
         $stock = Stock::all(); // replace with your own data
-
-        $pdf = Pdf::loadView('cetak.stock', ['stock' =>$stock])->setPaper('A4', 'portrait');
-     
+       
+    
+        $pdf = Pdf::loadView('cetak.stock',compact('stock', 'today') );
         return $pdf->stream('cetak_stock.pdf');
 
     

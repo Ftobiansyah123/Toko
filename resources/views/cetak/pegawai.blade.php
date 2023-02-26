@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
   <title>Laporan Pegawai</title>
+  <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <style>
         /* Add your custom CSS styles here */
     </style>
@@ -18,7 +19,7 @@
         <div class="card-body">
         <div class="table-responsive">
                  
-                <table class="display table table-striped table-hover" border="0.5" >
+                <table class="display table table-striped table-hover" >
                     <thead>
                         <tr>
                         <th>ID</th>
