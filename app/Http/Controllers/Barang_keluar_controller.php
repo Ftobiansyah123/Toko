@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Barang_keluar;
 use App\Models\Stock;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class Barang_keluar_controller extends Controller
@@ -73,9 +74,10 @@ class Barang_keluar_controller extends Controller
     }
     public function cetak_pdf()
     {
-        $bk = Barang_keluar::all(); // replace with your own data
+        $today = Carbon::now()->isoFormat('DD MMMM Y');
+        $barangkeluar = Barang_keluar::all(); // replace with your own data
 
-        $pdf = Pdf::loadView('cetak.barang_keluar', ['barangkeluar' =>$bk])->setPaper('A4', 'portrait');
+        $pdf = Pdf::loadView('cetak.barang_keluar',compact('barangkeluar', 'today') );
      
         return $pdf->stream('cetak_barang_keluar.pdf');
 

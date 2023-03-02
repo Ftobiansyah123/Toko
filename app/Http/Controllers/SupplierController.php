@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -54,9 +55,10 @@ class SupplierController extends Controller
     }
     public function cetak_pdf()
     {
+        $today = Carbon::now()->isoFormat('DD MMMM Y');
         $supplier = Supplier::all(); // replace with your own data
 
-        $pdf = Pdf::loadView('cetak.supplier', ['supplier' =>$supplier])->setPaper('A4', 'portrait');
+        $pdf = Pdf::loadView('cetak.supplier',compact('supplier', 'today') );
      
         return $pdf->stream('cetak_supplier.pdf');
 

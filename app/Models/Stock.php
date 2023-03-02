@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use PhpParser\Node\Stmt\Return_;
 
 class Stock extends Model
 {
@@ -19,4 +20,7 @@ class Stock extends Model
     public function barang_keluar() {
         return $this->hasOne(Barang_keluar::class, 'idbarang', 'id');
     }
+    public function perubahan_harga(){
+        return $this->hasOne(Perubahan_harga::class, 'idbarang', 'id');
+    } 
 }

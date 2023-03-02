@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
    
-  <title>Stock</title>
+  <title>CetakStok</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <style>
+ <style>
    .pagenum:before {
         content: counter(page);
     }
+    .line_nota{
+    border-top: 1px dashed #000;
+    margin-top: 3px;
+    height: 6px;}
 </style>
 </head>
 <body class="A4">
@@ -20,7 +23,6 @@
     <h1>Toko UD FAHREZA</h1>
     <br>
     </center>
-   
     <center>    <h4>Laporan Stock Data Barang</h4></center>
     <div class="row">
         
@@ -47,8 +49,6 @@
                     @php
                         $id = 1;
                     @endphp
-                       
-                            <tr>
                             @foreach ($stock as $st)
                             <tr>
                                 <td class="text-center">{{ $id++ }}</td>
@@ -59,19 +59,29 @@
                                 <td class="text-left">Rp.  {{ $st->harga }} </td>
                                 <td class="text-center">{{ $st->deskripsi }}</td>
                                 <td class="text-right">{{ $st->stok }} </td>
-                                
-                                
+                               
                             </tr>
-                        @endforeach
-                        
+                            @endforeach
                     </tbody>
-                   
+                   <tfoot>
+                    
+                    <th colspan="6">
+                        <td>Jumlah Stok Barang</td>
+                    <td class="bg bg-warning">{{ $st->sum('stok') }}</td>
+
+                    </th>
+                   </tfoot>
+                  
+                        
                 </table>
                 </div>
             </div>       
         </div>
-        <span class="pagenum"></span>
-        
+       <div>
+
+       </div>
+     
+      
 </body>
 
 </html>

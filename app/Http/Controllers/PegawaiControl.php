@@ -7,6 +7,7 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use FontLib\Font;
 use Illuminate\Support\Facades\App;
 
@@ -60,10 +61,10 @@ class PegawaiControl extends Controller
 
     public function cetak_pdf()
     {
+     $today = Carbon::now()->isoFormat('DD MMMM Y');
         $pegawai = pegawai::all(); // replace with your own data
 
-        $pdf = Pdf::loadView('cetak.pegawai', ['pegawai' =>$pegawai])->setPaper('A4', 'portrait');
-     
+        $pdf = Pdf::loadView('cetak.pegawai',compact('pegawai', 'today') );
         return $pdf->stream('cetak_pegawai.pdf');
 
     

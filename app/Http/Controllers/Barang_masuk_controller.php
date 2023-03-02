@@ -8,6 +8,7 @@ use App\Models\Stock;
 use App\Models\Supplier;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Auth\AuthManager;
 
@@ -64,6 +65,7 @@ class Barang_masuk_controller extends Controller
     }
 
     public function update(Request $request, $id){
+        
         $barangmasuk =Barang_masuk::find($id);
         $barangmasuk->update($request->all());
         alert()->success('Sukses','Data sudah update.');
@@ -77,12 +79,33 @@ class Barang_masuk_controller extends Controller
         return redirect()->route('barang_masuk');
     }
     public function cetak_pdf()
-    {
-        $bm = Barang_masuk::all(); // replace with your own data
+{
+    $today = Carbon::now()->isoFormat('DD MMMM Y');
+    $barangmasuk = Barang_masuk::all(); // replace with your own data
 
-        $pdf = Pdf::loadView('cetak.barang_masuk', ['barangmasuk' =>$bm])->setPaper('A4', 'portrait');
+        $pdf = Pdf::loadView('cetak.barang_masuk', compact('barangmasuk', 'today') );
      
         return $pdf->stream('cetak_barang_masuk.pdf');
+
+    
+        
+}
+public function invoice_pdf ($id)
+{
+
+    
+    $supplier = Supplier::all();
+   
+    $barangmasuk = Barang_masuk::with(['stock', 'user', 'supplier'])->where('id', [$id])->get();
+    // $barangmasuk =Barang_masuk::find($id);
+
+    
+    $today = Carbon::now()->isoFormat('DD MMMM Y');
+    
+    // replace with your own data
+
+        $pdf = Pdf::loadView('cetak.print_invoice', compact('barangmasuk', 'today', 'supplier') );
+        return $pdf->stream('cetak_invoice.pdf');
 
     
         

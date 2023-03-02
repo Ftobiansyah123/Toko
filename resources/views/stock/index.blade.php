@@ -36,8 +36,8 @@
                                 <td>{{ $st->Merek }}</td>
                                 <td>{{ $st->satuan }}</td>
                                 <td>{{ $st->harga }}</td>
-                                <td>{{ $st->deskripsi }}</td>
-                                <td>{{ $st->stok }}</td>
+                                <td class="text-center">{{ $st->deskripsi }}</td>
+                                <td class=" text-end">{{ $st->stok }}</td>
                                 
                                 <td>
                                 <a href={{ route('stock.edit', $st->id) }} class="btn btn-sm btn-warning">
@@ -50,6 +50,17 @@
                                 </td>
                             </tr>
                             @endforeach
+
+                            <tfoot>
+                    
+                    <th colspan="6">
+                        <td class="text-bold"><b>Jumlah Stok Barang</b></td>
+                    <td class=" text-bold text-end"><b>{{ $st->sum('stok') }}</b></td>
+
+                    </th>
+                   </tfoot>
+                  
+                        
                         </table>
                     </div>
                 </div>

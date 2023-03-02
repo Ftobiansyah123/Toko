@@ -51,6 +51,8 @@ Route::get('edit-barang_masuk/{id}', [App\Http\Controllers\Barang_masuk_controll
 Route::post('/update-barang_masuk/{id}', [App\Http\Controllers\Barang_masuk_controller::class, 'update'])->name('barang_masuk.update');
 Route::get('hapus-barang_masuk/{id}', [App\Http\Controllers\Barang_masuk_controller::class, 'destroy'])->name('barang_masuk.hapus');
 Route::get('barang_masuk-cetak', [App\Http\Controllers\Barang_masuk_controller::class, 'cetak_pdf'])->name('cetak_barang_masuk.pdf'); 
+Route::get('/invoice-cetak/{id}', [App\Http\Controllers\Barang_masuk_controller::class, 'invoice_pdf'])->name('cetak_invoice_bm.pdf'); 
+
 
 //supplier routing
 Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'index'])->name('supplier');
@@ -70,5 +72,17 @@ Route::post('/update-barang_keluar/{id}', [App\Http\Controllers\Barang_keluar_co
 Route::get('hapus-barang_keluar/{id}', [App\Http\Controllers\Barang_keluar_controller::class,'destroy'])->name('barang_keluar.hapus');
 Route::get('barang_keluar-cetak', [App\Http\Controllers\Barang_keluar_controller::class, 'cetak_pdf'])->name('cetak_barang_keluar.pdf'); 
     
+//perubahan harga
+
+Route::get('/perubahan_harga', [App\Http\Controllers\Perubahan_harga_controller::class, 'index'])->name('perubahan_harga');
+Route::get('/perubahan_harga-create', [App\Http\Controllers\Perubahan_harga_controller::class, 'create'])->name('perubahan_harga.create');
+Route::get('edit-perubahan_harga/{id}', [App\Http\Controllers\Perubahan_harga_controller::class, 'edit'])->name('perubahan_harga.edit');
+Route::post('/simpan-perubahan_harga', [App\Http\Controllers\Perubahan_harga_controller::class, 'store'])->name('simpan.perubahan_harga');
+Route::post('/update-perubahan_harga/{id}', [App\Http\Controllers\Perubahan_harga_controller::class, 'update'])->name('perubahan_harga.update');
+Route::get('hapus-perubahan_harga/{id}', [App\Http\Controllers\Perubahan_harga_controller::class, 'destroy'])->name('perubahan_harga.hapus');
+Route::get('perubahan_harga-cetak', [App\Http\Controllers\Perubahan_harga_controller::class, 'cetak_pdf'])->name('cetak_perubahan_harga.pdf');  
+Route::get('/perubahan_harga/autocomplete', [App\Http\Controllers\Perubahan_harga_controller::class, 'autocomplete'])->name('perubahan_harga.autocomplete');
+
+
 });
 
