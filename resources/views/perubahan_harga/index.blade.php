@@ -8,7 +8,7 @@
                 <div class="card-header">
                     {{ __('Data Perubahan harga') }}
                     <a href={{ route('perubahan_harga.create') }} class="btn btn-sm btn-primary float-end"><i class="fa-solid fa-circle-plus fa-beat"></i>Tambah Data</a>
-                    <a href={{ route('cetak_pegawai.pdf') }} class="btn btn-sm btn-primary float-left" target="_blank">CETAK PDF</a>
+                    <a href={{ route('cetak_perubahan_harga.pdf') }} class="btn btn-sm btn-primary float-left" target="_blank">CETAK PDF</a>
                 </div>
 
                 <div class="card-body">

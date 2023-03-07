@@ -39,7 +39,7 @@
                 <table class="table table-sm table-bordered table-striped"  >
                     <thead>
                     <tr>
-                                <th>ID</th>
+                                
                                 <th>Nama Supplier</th>
                                 <th>Nama Barang</th>
                                 <th>Satuan</th>

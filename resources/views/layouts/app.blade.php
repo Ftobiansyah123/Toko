@@ -13,6 +13,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    
 
 
     <!-- Scripts -->
@@ -20,9 +21,13 @@
 
  
     <link rel="stylesheet" href="{{ asset('font/css/all.min.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
+
 <body class="bg bg-secondary">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg">
@@ -99,6 +104,18 @@
                         </ul>
                             
                         </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Supplier
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('perubahan_harga') }}">Atur Perubahan Harga</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ route('perubahan_harga.create') }}">Tambah Perubahan Harga</a></li>
+                           
+                        </ul>
+                            
+                        </li>
                    
                     </ul>
                         
@@ -148,4 +165,5 @@
     @include('sweetalert::alert')
 
 </body>
+
 </html>
