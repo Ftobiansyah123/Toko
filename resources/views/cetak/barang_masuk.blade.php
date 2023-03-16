@@ -69,7 +69,7 @@
                             <tfoot>
 
                         <th >
-                                <td colspan="6" class="text-bold text-center "><b>Jumlah Barang Masuk</b></td>
+                                <td colspan="5" class="text-bold text-center "><b>Jumlah Barang Masuk</b></td>
                                 <td class=" text-bold text-end"><b>{{ $bm->sum('stok') }}</b></td>
                               
                                 </th>

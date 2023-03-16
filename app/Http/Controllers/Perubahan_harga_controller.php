@@ -74,7 +74,7 @@ class Perubahan_harga_controller extends Controller
     public function cetak_pdf()
 {
     $today = Carbon::now()->isoFormat('DD MMMM Y');
-    $perubahan_harga = Perubahan_harga::all(); // replace with your own data
+    $perubahan_harga = Perubahan_harga::with(['stock'])->get(); // replace with your own data
 
         $pdf = Pdf::loadView('cetak.perubahan_harga', compact('perubahan_harga', 'today') );
      

@@ -35,7 +35,7 @@
                                 <td>{{ $ph->harga_baru }}</td>
                                 
                                 <td>
-                                <a href={{ route('perubahan_harga.edit', $ph->id) }} class="btn btn-sm btn-warning"><i class="fa fa-edit"></i>EDIT</a>
+                                <!-- <a href={{ route('perubahan_harga.edit', $ph->id) }} class="btn btn-sm btn-warning"><i class="fa fa-edit"></i>EDIT</a> -->
                                 <a href={{ route('perubahan_harga.hapus', $ph->id) }} class="btn btn-sm btn-danger"><i class="fa fa-eraser"></i>HAPUS</a>
 
                                 </td>

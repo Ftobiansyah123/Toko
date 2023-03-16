@@ -43,7 +43,7 @@
                                 
                                 <td>
                                 <a  href={{ route('cetak_invoice_bm.pdf', $bm->id) }} class="btn btn-sm btn-warning" target="_blank"> <i class="fa fa-edit"  ></i>Invoice</a>
-                                <a href={{ route('barang_masuk.edit', $bm->id) }} class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>EDIT</a>
+                                <!-- <a href={{ route('barang_masuk.edit', $bm->id) }} class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>EDIT</a> -->
                                 <a href={{ route('barang_masuk.hapus', $bm->id) }} class="btn btn-sm btn-danger"><i class="fa fa-eraser"></i>HAPUS</a>
 
                                 </td>

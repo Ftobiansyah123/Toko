@@ -18,7 +18,7 @@
                                 <th>ID</th>
                                 <th>Nama Barang</th>
                                 <th>Stok</th>
-                                <th>Tanggal Masuk</th>
+                                <th>Tanggal Keluar</th>
                                 <th>Nama Penerima</th>
                                 <th>Aksi</th>
                                
@@ -35,7 +35,7 @@
                                 <td>{{ $bk->penerima }}</td>
                                 
                                 <td>
-                                <a href={{ route('barang_keluar.edit', $bk->id) }} class="btn btn-sm btn-warning"><i class="fa fa-edit"></i>EDIT</a>
+                                <!-- <a href={{ route('barang_keluar.edit', $bk->id) }} class="btn btn-sm btn-warning"><i class="fa fa-edit"></i>EDIT</a> -->
                                 <a href={{ route('barang_masuk.hapus', $bk->id) }} class="btn btn-sm btn-danger"> <i class="fa fa-eraser"></i>HAPUS</a>
 
                                 </td>

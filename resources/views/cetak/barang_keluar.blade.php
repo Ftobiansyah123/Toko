@@ -34,7 +34,7 @@
                                 <th>ID</th>
                                 <th>Nama Barang</th>
                                 <th>Stok</th>
-                                <th>Tanggal Masuk</th>
+                                <th>Tanggal Keluar</th>
                                 <th>Nama Penerima</th>
                              
                                

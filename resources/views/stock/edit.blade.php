@@ -17,7 +17,7 @@
                             
                     
                         <div class="mb-3">
-                            <label for="nomorbarang" class="form-label">Nomor Barang</label>
+                            <label for="nomorbarang" class="form-label">Nomor Barang/SN</label>
                             <input type="number" name="nomorbarang" class="form-control" placeholder="nomorbarang" value="{{ is_null($stock) ? '' : $stock->nomorbarang }}" >
                             
                         </div>

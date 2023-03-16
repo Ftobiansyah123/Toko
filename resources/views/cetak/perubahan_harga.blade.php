@@ -2,13 +2,9 @@
 <html lang="en">
 <head>
    
-  <title>CetakBarangKeluar</title>
+  <title>CetakPerubahanHarga</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <style>
-   .pagenum:before {
-        content: counter(page);
-    }
-</style>
+ 
 </head>
 <body class="A4">
     <div class="page-header"></div>
@@ -20,7 +16,7 @@
     <br>
     </center>
    
-    <center>    <h4>Laporan Data Barang Keluar</h4></center>
+    <center>    <h4>Laporan Data Perubahan Harga</h4></center>
     <div class="row">
         
     
@@ -28,8 +24,8 @@
         <div class="card-body">
         <div class="table-responsive">
                  
-        <table class="table table-bordered text-sm-right">
-                            <tr>
+        <table class="table table-sm table-bordered">
+                            <tr style="text-align: center;"  class="table-secondary">
                                 <th>ID</th>
                                 <th>Nama Barang</th>
                                 <th>Tanggal</th>
@@ -46,8 +42,8 @@
                                 <td>{{ $id++ }}</td>
                                 <td>{{ $ph->stock->namabarang }}</td>
                                 <td>{{ $ph->tgl }}</td>
-                                <td>{{ $ph->harga_lama }}</td>
-                                <td>{{ $ph->harga_baru }}</td>
+                                <td>Rp. {{ $ph->harga_lama }}</td>
+                                <td>Rp. {{ $ph->harga_baru }}</td>
                                 
                               
                             </tr>

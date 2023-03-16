@@ -16,7 +16,7 @@
                         <table class="table table-bordered text-sm-right">
                             <tr>
                                 <th>ID</th>
-                                <th>Nomor Barang</th>
+                                <th>Nomor Barang/SN</th>
                                 <th>Nama barang</th>
                                 <th>Merek</th>
                                 <th>Satuan</th>

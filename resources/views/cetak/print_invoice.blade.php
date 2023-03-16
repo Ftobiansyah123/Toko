@@ -88,7 +88,7 @@
         <div class="line_nota"></div>
         <div class="text-right">
         @foreach ($barangmasuk as $bm)
-        <p>Pegawai Pemesan Barang</p>
+        <p>Pegawai Penerima Barang</p>
         <br>
         <br>
     <p>{{ $bm->user->name }}</p>
